@@ -8,12 +8,6 @@ HTMLInputElement.prototype.backspace = function(){
 	this.value = this.value.substring(0,this.selectionStart + d)+this.value.substring(this.selectionEnd,this.value.length);
 	if(this.setSelectionRange){
 		this.focus();this.setSelectionRange(pp+d,pp+d);
-	}else if (this.createTextRange) {
-		var range = this.createTextRange();
-		range.collapse(true);
-		range.moveEnd('character', pp+d);
-		range.moveStart('character', pp+d);
-		range.select();
 	}
 }
 HTMLInputElement.prototype.space = function(){
