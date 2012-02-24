@@ -11,11 +11,7 @@ HTMLInputElement.prototype.backspace = function(){
 	}
 }
 HTMLInputElement.prototype.space = function(){
-	var pp = this.selectionStart;
-	this.value = this.value.substring(0,this.selectionStart)+" "+this.value.substring(this.selectionEnd,this.value.length);
-	if(this.setSelectionRange){
-		this.focus();this.setSelectionRange(pp+1,pp+1);
-	}
+	this.typeText(" ");
 }
 HTMLInputElement.prototype.typeText = function(s){
 	var pp = this.selectionStart;
