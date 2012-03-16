@@ -20,4 +20,24 @@ HTMLInputElement.prototype.typeText = function(s){
 		this.focus();this.setSelectionRange(pp+1,pp+1);
 	}
 }
+
+function createSelectList(document,pairs,className,style){
+                var select = document.createElement("select"),option;
+                
+                className && (select.className += className);
+                if(style){
+                    for(var v in style){
+                        select.style[v] = style[v];
+                    }
+                }
+                
+                for(var i=0;i<pairs.length;i++){
+                    option = document.createElement("option");
+                        option.value = pairs[i].value;
+                        option.text = pairs[i].text;
+                        pairs[i].className && (option.className += pairs[i].className);
+                        select.options[i] = option;
+                }
+                return select;
+            }
 		
