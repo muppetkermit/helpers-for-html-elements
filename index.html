@@ -97,38 +97,40 @@
 	
 	
       <h2>HTMLSelectElement Example</h2>
-      
-	<select id="">
-        	<option value="11">oneone</option>
-        	<option value="12">onetwo</option>
-        	<option value="13">onethree</option>
-        	<option value="14">onefour</option>
-        	<option value="15">onefi</option>
-        	<option value="16">onesix</option>
-        </select>
-        <select id="select_">
-        	<option value="11">oneone</option>
-        	<option value="12">onetwo</option>
-        	<option value="13">onethree</option>
-        	<option value="14">onefour</option>
-        	<option value="15">onefi</option>
-        	<option value="16">onesix</option>
-        </select>
+      <div id="selectHolder">
+		<select id="">
+	        	<option value="11">oneone</option>
+	        	<option value="12">onetwo</option>
+	        	<option value="13">onethree</option>
+	        	<option value="14">onefour</option>
+	        	<option value="15">onefi</option>
+	        	<option value="16">onesix</option>
+	        </select>
+	        <select id="select_">
+	        	<option value="11">oneone</option>
+	        	<option value="12">onetwo</option>
+	        	<option value="13">onethree</option>
+	        	<option value="14">onefour</option>
+	        	<option value="15">onefi</option>
+	        	<option value="16">onesix</option>
+	        </select>
+	   </div>
     <script>
+    	var sDivEle = document.getElementById("selectHolder");
        var selectElement = YM.Select.createSelectList(document,document.getElementById("select_"),
        													[{value:1,text:'one'},{value:2,text:'two'},{value:3,text:'three'},{value:4,text:'four',className:"option_className"}],
        													"selectclassName", // select element class
        													{height:"20px",width:"100px"}, // select element style
        													"", // select element id
        													false); // override option
-       	document.body.appendChild(selectElement);												
+       	sDivEle.appendChild(selectElement);												
        selectElement = YM.Select.createSelectList(	document,null, // select element
        													[{value:1,text:'one'},{value:2,text:'two'},{value:3,text:'three'},{value:4,text:'four',className:"option_className"}],
        													"selectclassName", // select element class
        													{height:"20px",width:"100px"}, // select element style
        													"newid", // select element id
        													true); // override option, has no effect if select element is null
-       document.body.appendChild(selectElement);
+       sDivEle.appendChild(selectElement);
     </script>
 	
       <h2>Authors</h2>
