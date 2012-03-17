@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Create HTMLSelectElement</title>
+    </head>
+    <body>
+        <h1></h1>
+        <select id="">
+        	<option value="11">oneone</option>
+        	<option value="12">onetwo</option>
+        	<option value="13">onethree</option>
+        	<option value="14">onefour</option>
+        	<option value="15">onefi</option>
+        	<option value="16">onesix</option>
+        </select>
+        <select id="select_">
+        	<option value="11">oneone</option>
+        	<option value="12">onetwo</option>
+        	<option value="13">onethree</option>
+        	<option value="14">onefour</option>
+        	<option value="15">onefi</option>
+        	<option value="16">onesix</option>
+        </select>
+    </body>
+    
+    <script src="js/html_element_helpers.js" ></script>
+    <script>
+       var selectElement = YM.Select.createSelectList(document,document.getElementById("select_"),
+       													[{value:1,text:'one'},{value:2,text:'two'},{value:3,text:'three'},{value:4,text:'four',className:"option_className"}],
+       													"selectclassName", // select element class
+       													{height:"20px",width:"100px"}, // select element style
+       													"", // select element id
+       													false); // override option
+       	document.body.appendChild(selectElement);												
+       selectElement = YM.Select.createSelectList(	document,null, // select element
+       													[{value:1,text:'one'},{value:2,text:'two'},{value:3,text:'three'},{value:4,text:'four',className:"option_className"}],
+       													"selectclassName", // select element class
+       													{height:"20px",width:"100px"}, // select element style
+       													"newid", // select element id
+       													true); // override option, has no effect if select element is null
+       document.body.appendChild(selectElement);
+    </script>
+</html>
